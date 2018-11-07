@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Weather",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#393836",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh":true
+}
