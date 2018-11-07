@@ -1,13 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+	<image src='../../img/beach-bird-birds-235787.jpg' class='img'></image>
+  <view class='top'>
+      <i class="iconfont icon-search"></i>
+			<input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询'></input>
+	</view>
 </view>
