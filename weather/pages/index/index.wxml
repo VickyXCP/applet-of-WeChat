@@ -1,8 +1,33 @@
 <!--index.wxml-->
 <view class="container">
+<!-- 背景设置 -->
 	<image src='../../img/beach-bird-birds-235787.jpg' class='img'></image>
+	<!-- 顶部搜索框 -->
   <view class='top'>
       <i class="iconfont icon-search"></i>
 			<input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询'></input>
+	</view>
+	<!-- 主内容区 -->
+	<view class='wrapper'>
+		<!-- 用户信息 -->
+		<view class='user'>
+			<image src='../../img/arrow.png'></image>
+			<text>昵称</text>
+			<i class="iconfont icon-xiajiantou"></i>
+		</view>
+		<!-- 详细天气信息 -->
+		<view class='info'>
+			<view>
+				<i class="iconfont icon-dingwei"></i>
+				<text class='city'>下城</text>
+				<i class="iconfont icon-xiajiantou"></i>
+			</view>
+			<text>更新</text>
+		</view>
+		<view class='detail'>
+				<view class='temp'><text>℃</text></view>
+				<view class='weather'>晴</view>
+				<view class='pm'>能见度</view>
+		</view>
 	</view>
 </view>

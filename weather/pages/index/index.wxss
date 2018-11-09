@@ -1,35 +1,81 @@
 /**index.wxss**/
 
-.container{
-	width: 100%;
-	height: 100%;
-	/* border: 1px solid red; */
+.container {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
 }
 
-.img{
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
+.img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 
-.top{
-	display: flex;
-	width: 86%;
-	margin: 10px auto;
-	border-bottom: 1px solid #fff;
+.top {
+  display: flex;
+  width: 86%;
+  margin: 10px auto;
+  border-bottom: 1px solid #fff;
 }
 
-.top .iconfont{
-	color: #eee;
-	font-size: 28px;
+.top .iconfont {
+  color: #eee;
+  font-size: 28px;
 }
-.top .placeholderclass{
-	color: #fff;
-	font-size: 16px;
+
+.top .placeholderclass {
+  color: #fff;
+  font-size: 14px;
 }
-.top input{
-	color: #fff
+
+.top input {
+  color: #fff;
+  font-size: 14px;
+}
+
+.user {
+  display: flex;
+  height: 30px;
+  line-height: 30px;
+  padding: 10px 25px;
+  color: white;
+  font-size: 14px;
+}
+
+.user image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+.user .iconfont {
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
+  padding: 0 25px;
+	color: white;
+	font-size: 14px
+}
+.info .city{
+	margin: 0 10px;
+	font-size: 30px
+}
+.info .iconfont{
+	vertical-align: 5px;
+}
+
+.detail{
+	text-align: center;
+	color: white
 }
