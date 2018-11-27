@@ -1,33 +1,69 @@
 <!--index.wxml-->
 <view class="container">
-<!-- 背景设置 -->
-	<image src='../../img/beach-bird-birds-235787.jpg' class='img'></image>
-	<!-- 顶部搜索框 -->
+  <!-- 背景设置 -->
+  <image src='../../img/beach-bird-birds-235787.jpg' class='img'></image>
+  <!-- 顶部搜索框 -->
   <view class='top'>
-      <i class="iconfont icon-search"></i>
-			<input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询'></input>
-	</view>
-	<!-- 主内容区 -->
-	<view class='wrapper'>
-		<!-- 用户信息 -->
-		<view class='user'>
-			<image src='../../img/arrow.png'></image>
-			<text>昵称</text>
-			<i class="iconfont icon-xiajiantou"></i>
-		</view>
-		<!-- 详细天气信息 -->
-		<view class='info'>
-			<view>
-				<i class="iconfont icon-dingwei"></i>
-				<text class='city'>下城</text>
-				<i class="iconfont icon-xiajiantou"></i>
+    <i class="iconfont icon-search"></i>
+    <input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询'></input>
+  </view>
+  <!-- 主内容区 -->
+  <view class='wrapper'>
+    <!-- 用户信息 -->
+    <view class='user'>
+      <open-data class='avatar' type='userAvatarUrl'></open-data>
+      <open-data class='name' type='userNickName'></open-data>
+      <i class="iconfont icon-xiajiantou"></i>
+    </view>
+    <!-- 详细天气信息 -->
+    <view class='info'>
+      <view>
+        <i wx:if='{located}' class="iconfont icon-dingwei"></i>
+        <text class='city'>{{cityDatas.basic.location || '定位中'}}</text>
+        <i class="iconfont icon-xiajiantou"></i>
+      </view>
+      <text>{{cityDatas.updateTimeFormat}} 更新</text>
+    </view>
+    <view class='detail'>
+      <view class='message'>{{message}}</view>
+      <view class='temp'>{{cityDatas.now.tmp || '--'}}
+        <text> ℃</text>
+      </view>
+      <view class='weather'>{{cityDatas.now.cond_txt || '--'}}</view>
+      <view class='pm'>能见度 {{cityDatas.now.vis || '--'}}</view>
+    </view>
+    <!-- 未来三天天气信息 -->
+    <view class='guide' wx:if='{{cityDatas.daily_forecast}}'>
+      <view class='g-title'>3天预报</view>
+      <view class='g-items'>
+        <view class='item' wx:for='{{cityDatas.daily_forecast}}' wx:key='index'>
+          <view>{{item.date}}</view>
+          <view>{{item.tmp_min}}-{{item.tmp_max}}℃</view>
+          <view>
+            <text>{{item.cond_txt_d}}</text>
+						<image mode='widthFix' src='{{weatherIconUrl}}{{item.cond_code_d}}.png'></image>
+          </view>
+          <view>{{item.wind_dir}}{{item.wind_sc}}级</view>
+        </view>
+      </view>
+    </view>
+		<!-- 今日详细天气指数 -->
+		<view class='details'>
+			<view class='detail' wx:for='{{detailsDic.key}}' wx:key='index'>
+				<view>{{detailsDic.val[item]}}</view>
+				<view>{{cityDatas.now[item]}}</view>
 			</view>
-			<text>更新</text>
 		</view>
-		<view class='detail'>
-				<view class='temp'><text>℃</text></view>
-				<view class='weather'>晴</view>
-				<view class='pm'>能见度</view>
+		<!-- 生活指数 -->
+		<view class='lifestyles'>
+			<view class='lifestyle' wx:for='{{cityDatas.lifestyle}}' wx:key='index'>
+				<image mode='widthFix' src='/img/lifestyle_{{item.type}}.png'></image>
+				<view>
+					<view class='brf'>{{lifestyles[item.type]}}：{{item.brf}}</view>
+					<view class='txt'>{{item.txt}}</view>
+				</view>
+			</view>
+			<view class='footer'>开发者：Vicky</view>
 		</view>
-	</view>
+  </view>
 </view>

@@ -5,6 +5,7 @@ App({
     wx.getSystemInfo({
       success:(res)=>{
         this.globalData.systemInfo = res
+				// console.log(this.globalData.systemInfo)
       },
       fail: ()=>{},
       complete: ()=>{}
