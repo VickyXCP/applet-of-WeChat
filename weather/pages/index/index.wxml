@@ -5,7 +5,7 @@
   <!-- 顶部搜索框 -->
   <view class='top'>
     <i class="iconfont icon-search"></i>
-    <input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询'></input>
+    <input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询' value='{{searchText}}' bindconfirm='commitSearch'></input>
   </view>
   <!-- 主内容区 -->
   <view class='wrapper'>
@@ -17,8 +17,8 @@
     </view>
     <!-- 详细天气信息 -->
     <view class='info'>
-      <view>
-        <i wx:if='{located}' class="iconfont icon-dingwei"></i>
+      <view bindtap='toCityChoose'>
+        <i wx:if='{{located}}' class="iconfont icon-dingwei"></i>
         <text class='city'>{{cityDatas.basic.location || '定位中'}}</text>
         <i class="iconfont icon-xiajiantou"></i>
       </view>

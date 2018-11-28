@@ -1,15 +1,16 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/about/about",
-    "pages/cityChoose/cityChoose",
-    "pages/setting/setting",
-    "pages/systeminfo/systeminfo"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weather",
-    "navigationBarTextStyle": "black"
-  }
+	"pages": [
+		"pages/index/index",
+		"pages/about/about",
+		"pages/cityChoose/cityChoose",
+		"pages/setting/setting",
+		"pages/systeminfo/systeminfo",
+		"data"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "Weather",
+		"navigationBarTextStyle": "black"
+	}
 }

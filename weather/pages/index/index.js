@@ -8,6 +8,7 @@ Page({
 		message: '',
 		located: true,//表示是否显示当前所在城市
 		searchCity: '',//当前搜索城市
+		searchText: '',//当前输入内容
 		cityDatas: {},//当前城市的相关信息,包括天气信息以及更新时间等等
 		weatherIconUrl:globalData.weatherIconUrl,//天气图片的路径
 		// 本日详细天气指数
@@ -63,7 +64,6 @@ Page({
 		this.setData({
 			cityDatas: data
 		})
-		console.log(this.data.cityDatas)
 	},
 	fail(res){
 		wx.stopPullDownRefresh()
@@ -93,7 +93,7 @@ Page({
 		wx.getLocation({
 			success: (res) => {
 				this.getWeather(`${res.latitude},${res.longitude}`)
-				callback && callback
+				callback && callback()
 			},
 			fail: (res)=>{
 				this.fail(res)
@@ -112,6 +112,7 @@ Page({
 				if (res.statusCode === 200) {
 					let data = res.data.HeWeather6[0]
 					if (data.status === 'ok') {
+						this.clearInput()
 						this.success(data, location)
 					}else{
 						wx.showToast({
@@ -128,6 +129,34 @@ Page({
 					icon: 'none'
 				})
 			}
+		})
+	},
+	// 发起搜索
+	search(val,callback){
+		if(val){
+			this.setData({
+				located: false
+			})
+			this.getWeather(val)
+			callback && callback()
+		}
+	},
+	// 确认发起搜索
+	commitSearch(res){
+		console.log(res)
+		let val = ((res.detail || {}).value || '').replace(/\s+/g,'')
+		this.search(val)
+	},
+	// 清空搜索框
+	clearInput(){
+		this.setData({
+			searchText: ''
+		})
+	},
+	// 跳转到城市选择页面
+	toCityChoose(){
+		wx.navigateTo({
+			url: '/pages/cityChoose/cityChoose',
 		})
 	},
 	// 重新加载天气

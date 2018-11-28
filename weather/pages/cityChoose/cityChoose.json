@@ -1,1 +1,7 @@
-{}
+{
+	"navigationBarBackgroundColor": "#40a7e7",
+	"navigationBarTextStyle": "white",
+	"navigationBarTitleText": "选择城市",
+	"backgroundColor": "#f4f6f9",
+	"backgroundTextStyle": "light"
+}

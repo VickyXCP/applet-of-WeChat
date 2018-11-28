@@ -1,2 +1,22 @@
-<!--pages/cityChoose/cityChoose.wxml-->
-<text>pages/cityChoose/cityChoose.wxml</text>
+<view>
+  <view class='top'>
+    <view class='search'>
+      <i class="iconfont icon-search"></i>
+      <input placeholder='请输入城市名，快速查询天气信息' value='{{inputText}}' placeholder-style='font-size: 26rpx;' bindinput='inputFilter1' bindconfirm='inputFilter1' bindfocus='inputFilter1' bindblur='inputFilter1'></input>
+    </view>
+    <view class='clear' catchtap='cancel'>清空</view>
+  </view>
+  <view class='location'>
+    <text>猜你想找</text>
+    <view>
+			<button size='mini' catchtap='back'>定位</button>
+		</view>
+  </view>
+	<view class='items'>
+		<view class='category' wx:for='{{showItems}}' wx:key='{{index}}'>
+		 <view class='initial'>{{index}}</view>
+		 <view class='item' hover-class='hover' wx:for='{{item}}' wx:key='{{index}}' catchtap='choose' data-name='{{item.name}}'>{{item.name}}</view>
+		</view>
+		<view class='empty' wx:if='{{!showItems}}'>暂无城市可选</view>
+	</view>
+</view>
