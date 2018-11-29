@@ -1,2 +1,20 @@
 <!--pages/setting/setting.wxml-->
-<text>pages/setting/setting.wxml</text>
+<view class='setting'>
+  <view class='box'>
+    <view class='title'>
+			<text>自定义</text>
+    </view>
+    <view class='main'>
+      <view class='left'><text>打开顶部城市天气快捷键搜索</text></view>
+      <view class='right'>
+				<switch color='#40a7e7' checked bindchange="switchChange" data-switchparam='hiddenSearch'/>
+			</view>
+    </view>
+		<view class='main'>
+      <view class='left'><text>显示生活指数信息</text></view>
+      <view class='right'>
+				<switch color='#40a7e7' checked bindchange="switchChange" data-switchparam='hiddenStyles'/>
+			</view>
+    </view>
+  </view>
+</view>

@@ -46,6 +46,14 @@ Page({
 			'fsh': '钓鱼指数',
 			'spi': '防晒指数',
 		},
+		hasPopped: false,//菜单是弹出还是隐藏，默认隐藏
+		animationMain: {},
+		animationOne: {},
+		animationTwo: {},
+		animationThree: {},
+		animationFour: {},
+		hiddenSearch: false,//隐藏搜索框
+		hiddenStyles: false,//隐藏生活指数
 	},
 	// 公共调用函数success，fail
 	success(data, location){
@@ -157,6 +165,115 @@ Page({
 	toCityChoose(){
 		wx.navigateTo({
 			url: '/pages/cityChoose/cityChoose',
+		})
+	},
+	// 菜单弹出
+	menuMain(){
+		if(!this.data.hasPopped){
+			this.pop()
+			this.setData({
+				hasPopped: true
+			})
+		}else{
+			this.takeBack()
+			this.setData({
+				hasPopped: false
+			})
+		}
+	},
+	// 菜单闭合
+	menuHide(){
+
+	},
+	// 菜单弹出动画
+	pop(){
+		let animationMain = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationOne = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationTwo = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationThree = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationFour = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		animationMain.rotateZ(180).step()
+		animationOne.translate(0,-60).rotateZ(360).opacity(1).step()
+		animationTwo.translate(-Math.sqrt(3600-400), -30).rotateZ(360).opacity(1).step()
+		animationThree.translate(-Math.sqrt(3600 - 400), 30).rotateZ(360).opacity(1).step()	
+		animationFour.translate(0, 60).rotateZ(360).opacity(1).step()			
+		this.setData({
+			animationMain: animationMain.export(),
+			animationOne: animationOne.export(),
+			animationTwo: animationTwo.export(),
+			animationThree: animationThree.export(),
+			animationFour: animationFour.export()
+		})
+	},
+	// 菜单闭合动画
+	takeBack(){
+		let animationMain = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationOne = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationTwo = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationThree = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		let animationFour = wx.createAnimation({
+			duration: 200,
+			timingFunction: 'ease-out'
+		})
+		animationMain.rotateZ(0).step()
+		animationOne.translate(0, 0).rotateZ(0).opacity(0).step()
+		animationTwo.translate(0,0).rotateZ(0).opacity(0).step()
+		animationThree.translate(0, 0).rotateZ(0).opacity(0).step()
+		animationFour.translate(0, 0).rotateZ(0).opacity(0).step()
+		this.setData({
+			animationMain: animationMain.export(),
+			animationOne: animationOne.export(),
+			animationTwo: animationTwo.export(),
+			animationThree: animationThree.export(),
+			animationFour: animationFour.export()
+		})
+	},
+	// 跳转到设置页面
+	menuToSetting(){
+		this.menuMain()
+		wx.navigateTo({
+			url: '/pages/setting/setting',
+		})
+	},
+	// 跳转到定位页面
+	menuToLocation(){
+		this.menuMain()
+		wx.navigateTo({
+			url: '/pages/cityChoose/cityChoose',
+		})
+	},
+	// 跳转到关于页面
+	menuToAbout(){
+		this.menuMain()
+		wx.navigateTo({
+			url: '/pages/about/about',
 		})
 	},
 	// 重新加载天气

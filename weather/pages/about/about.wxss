@@ -1,1 +1,20 @@
 /* pages/about/about.wxss */
+.about{
+	padding: 20rpx;
+}
+
+.box{
+	margin-bottom: 10rpx;
+	padding: 20rpx;
+	background-color: #fff;
+}
+
+.title{
+	margin: 10rpx 0;
+	color: #40a7e7;
+	font-size: 30rpx;
+}
+
+.contain{
+	font-size: 26rpx;
+}

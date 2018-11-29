@@ -41,29 +41,38 @@
           <view>{{item.tmp_min}}-{{item.tmp_max}}℃</view>
           <view>
             <text>{{item.cond_txt_d}}</text>
-						<image mode='widthFix' src='{{weatherIconUrl}}{{item.cond_code_d}}.png'></image>
+            <image mode='widthFix' src='{{weatherIconUrl}}{{item.cond_code_d}}.png'></image>
           </view>
           <view>{{item.wind_dir}}{{item.wind_sc}}级</view>
         </view>
       </view>
     </view>
-		<!-- 今日详细天气指数 -->
-		<view class='details'>
-			<view class='detail' wx:for='{{detailsDic.key}}' wx:key='index'>
-				<view>{{detailsDic.val[item]}}</view>
-				<view>{{cityDatas.now[item]}}</view>
-			</view>
-		</view>
-		<!-- 生活指数 -->
-		<view class='lifestyles'>
-			<view class='lifestyle' wx:for='{{cityDatas.lifestyle}}' wx:key='index'>
-				<image mode='widthFix' src='/img/lifestyle_{{item.type}}.png'></image>
-				<view>
-					<view class='brf'>{{lifestyles[item.type]}}：{{item.brf}}</view>
-					<view class='txt'>{{item.txt}}</view>
-				</view>
-			</view>
-			<view class='footer'>开发者：Vicky</view>
-		</view>
+    <!-- 今日详细天气指数 -->
+    <view class='details'>
+      <view class='detail' wx:for='{{detailsDic.key}}' wx:key='index'>
+        <view>{{detailsDic.val[item]}}</view>
+        <view>{{cityDatas.now[item]}}</view>
+      </view>
+    </view>
+    <!-- 生活指数 -->
+    <view class='lifestyles'>
+      <view class='lifestyle' wx:for='{{cityDatas.lifestyle}}' wx:key='index'>
+        <image mode='widthFix' src='/img/lifestyle_{{item.type}}.png'></image>
+        <view>
+          <view class='brf'>{{lifestyles[item.type]}}：{{item.brf}}</view>
+          <view class='txt'>{{item.txt}}</view>
+        </view>
+      </view>
+      <view class='footer'>开发者：Vicky</view>
+    </view>
+  </view>
+  <!-- 悬浮菜单 -->
+  <view class='menus'>
+    <image src='/img/share_circle.png' animation='{{animationOne}}' class='menu'></image>
+		<button plain='true' open-type='share' animation='{{animationOne}}' class='menu share'></button>
+    <image src='/img/setting.png' animation='{{animationTwo}}' class='menu' catchtap='menuToSetting'></image>
+    <image src='/img/location.png' animation='{{animationThree}}' class='menu' catchtap='menuToLocation'></image>
+    <image src='/img/info.png' animation='{{animationFour}}' class='menu' catchtap='menuToAbout'></image>
+    <image src='/img/menu.png' animation='{{animationMain}}' class='menu main' catchtap='menuMain'></image>		
   </view>
 </view>

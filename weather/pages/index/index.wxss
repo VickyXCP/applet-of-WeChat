@@ -207,3 +207,23 @@
 	font-size: 20rpx;
 	padding: 20rpx 0 10rpx
 }
+
+.menus .menu{
+	position: fixed;
+	bottom: 150rpx;
+	right: 70rpx;
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+	opacity: 0;
+	z-index: 100
+}
+
+.menus .share{
+	background: rgba(0, 0, 0, 0);
+}
+.menus .main{
+	opacity: 1
+}
+
+

@@ -1,1 +1,38 @@
 /* pages/setting/setting.wxss */
+
+
+.box{
+	padding: 20rpx 30rpx;
+	background-color: #fff;
+}
+
+.title{
+	padding: 10rpx 0;
+	color: #40a7e7;
+	font-size: 30rpx;
+}
+
+.main{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10rpx 0;
+}
+
+.left{
+	color: #777274;
+	font-size: 26rpx;
+}
+
+.wx-switch-input{
+	width: 80rpx !important;
+	height: 40rpx !important;
+}
+.wx-switch-input::before{
+	width: 840rpx !important;
+	height: 36rpx !important;
+}
+.wx-switch-input::after{
+	width: 40rpx !important;
+	height: 36rpx !important;
+}

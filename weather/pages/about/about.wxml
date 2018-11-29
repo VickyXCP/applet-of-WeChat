@@ -1,2 +1,11 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view class='about'>
+  <view class='box'>
+    <view class='title'>代码已开源</view>
+    <view class='contain'>开源地址： https://github.com/VickyXCP/applet-of-WeChat/tree/master/weather</view>
+  </view>
+  <view class='box'>
+    <view class='title'>特别鸣谢</view>
+		<view class='contain'>和风天气</view>
+  </view>
+</view>
