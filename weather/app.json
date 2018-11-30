@@ -4,8 +4,7 @@
 		"pages/about/about",
 		"pages/cityChoose/cityChoose",
 		"pages/setting/setting",
-		"pages/systeminfo/systeminfo",
-		"data"
+		"pages/systeminfo/systeminfo"
 	],
 	"window": {
 		"backgroundTextStyle": "light",

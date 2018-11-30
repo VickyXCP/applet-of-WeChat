@@ -3,7 +3,7 @@
   <!-- 背景设置 -->
   <image src='../../img/beach-bird-birds-235787.jpg' class='img'></image>
   <!-- 顶部搜索框 -->
-  <view class='top'>
+  <view class='top' wx:if='{{hiddenSearch}}'>
     <i class="iconfont icon-search"></i>
     <input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询' value='{{searchText}}' bindconfirm='commitSearch'></input>
   </view>
@@ -55,7 +55,7 @@
       </view>
     </view>
     <!-- 生活指数 -->
-    <view class='lifestyles'>
+    <view class='lifestyles' wx:if='{{hiddenStyles}}'>
       <view class='lifestyle' wx:for='{{cityDatas.lifestyle}}' wx:key='index'>
         <image mode='widthFix' src='/img/lifestyle_{{item.type}}.png'></image>
         <view>
@@ -75,4 +75,9 @@
     <image src='/img/info.png' animation='{{animationFour}}' class='menu' catchtap='menuToAbout'></image>
     <image src='/img/menu.png' animation='{{animationMain}}' class='menu main' catchtap='menuMain'></image>		
   </view>
+	<!-- 是否显示设置按钮 -->
+	<view wx:if='{{openSettingButtonShow}}' class='openSettingButton'>
+		<image src='/img/unlock.png'></image>
+		<button open-type='openSetting'></button>
+	</view>
 </view>

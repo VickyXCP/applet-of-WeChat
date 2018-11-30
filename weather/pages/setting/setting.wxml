@@ -2,19 +2,72 @@
 <view class='setting'>
   <view class='box'>
     <view class='title'>
-			<text>自定义</text>
+      <text>自定义</text>
     </view>
     <view class='main'>
-      <view class='left'><text>打开顶部城市天气快捷键搜索</text></view>
+      <view class='left'>
+        <text>打开顶部城市天气快捷键搜索</text>
+      </view>
       <view class='right'>
-				<switch color='#40a7e7' checked bindchange="switchChange" data-switchparam='hiddenSearch'/>
-			</view>
+        <switch color='#40a7e7' checked bindchange="switchChange" data-switchparam='hiddenSearch' />
+      </view>
+    </view>
+    <view class='main'>
+      <view class='left'>
+        <text>显示生活指数信息</text>
+      </view>
+      <view class='right'>
+        <switch color='#40a7e7' checked bindchange="switchChange" data-switchparam='hiddenStyles' />
+      </view>
+    </view>
+  </view>
+  <view class='box'>
+    <view class='title'>
+      <text>检查更新</text>
+    </view>
+    <view class='main'>
+      <view class='left'>
+        <text>打开首页更新提醒</text>
+        <text>首页检测到新版本，会提示更新</text>
+      </view>
+      <view class='right'>
+        <switch color='#40a7e7' checked bindchange="switchChange" data-switchparam='remindUpdate' />
+      </view>
+    </view>
+  </view>
+  <view class='box'>
+    <view class='title'>
+      <text>小工具</text>
+    </view>
+    <view class='title m-title'>
+      <text>NFC</text>
+    </view>
+    <view class='main'>
+      <view class='left'>
+        <text>检测是否支持NFC</text>
+      </view>
+      <view class='right'>
+        <i class='iconfont icon-youjiantou'></i>
+      </view>
+    </view>
+		<view class='title m-title'>
+      <text>屏幕亮度</text>
+    </view>
+    <view class='main'>
+      <view class='left'>
+        <text>当前屏幕亮度</text>
+				<text>范围0~100，0最暗，100最亮</text>
+      </view>
+      <view class='right'>
+        <text>50</text>
+      </view>
     </view>
 		<view class='main'>
-      <view class='left'><text>显示生活指数信息</text></view>
-      <view class='right'>
-				<switch color='#40a7e7' checked bindchange="switchChange" data-switchparam='hiddenStyles'/>
-			</view>
+      <view class='left'>
+        <text>设置屏幕亮度</text>
+				<slider min='0' max='100' step='1' block-size='12' backgroundColor=''
+				activeColor='#40a7e7' show-value/>
+      </view>
     </view>
   </view>
 </view>
