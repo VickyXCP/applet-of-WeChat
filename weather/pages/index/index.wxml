@@ -3,7 +3,7 @@
   <!-- 背景设置 -->
   <image src='../../img/beach-bird-birds-235787.jpg' class='img'></image>
   <!-- 顶部搜索框 -->
-  <view class='top' wx:if='{{hiddenSearch}}'>
+  <view class='top'>
     <i class="iconfont icon-search"></i>
     <input placeholder-class='placeholderclass' placeholder-style='color: #fff' placeholder='请输入城市名，快速查询' value='{{searchText}}' bindconfirm='commitSearch'></input>
   </view>
@@ -55,7 +55,7 @@
       </view>
     </view>
     <!-- 生活指数 -->
-    <view class='lifestyles' wx:if='{{hiddenStyles}}'>
+    <view class='lifestyles'>
       <view class='lifestyle' wx:for='{{cityDatas.lifestyle}}' wx:key='index'>
         <image mode='widthFix' src='/img/lifestyle_{{item.type}}.png'></image>
         <view>
